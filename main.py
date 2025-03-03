@@ -99,3 +99,44 @@ plt.subplot(142);plt.imshow(img_flipped_vert);plt.title("Vertical Flip")
 plt.subplot(143);plt.imshow(img_flipped_both);plt.title("Both Flipped")
 plt.subplot(144);plt.imshow(img);plt.title("Original")
 plt.show()
+
+# ================================ Drawing Lines ================================ #
+
+image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
+imageLine = image.copy()
+cv2.line(imageLine, (654, 100), (654, 530), (0, 255, 255), thickness=5, lineType=cv2.LINE_AA)
+cv2.imshow("Line", imageLine)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+plt.imshow(imageLine[:, :, ::-1])
+
+# ================================ Drawing Circles ================================ #
+
+imageCircle = image.copy()
+cv2.circle(imageCircle, (925, 580), 50, (0, 255, 255), thickness=5, lineType=cv2.LINE_AA)
+cv2.imshow("Circle", imageCircle)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+plt.imshow(imageCircle[:, :, ::-1])
+
+# ================================ Drawing Rectangles ================================ #
+
+imageRectangle = image.copy()
+cv2.rectangle(imageRectangle, (500, 100), (700, 600), (255, 0, 0), thickness=5, lineType=cv2.LINE_8)
+cv2.imshow("Rectangle", imageRectangle)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+plt.imshow(imageRectangle[:, :, ::-1])
+
+# ================================ Adding Text ================================ #
+
+imageText = image.copy()
+text = "Apollo 11 Saturn V Launch, July 16, 1969"
+fontScale = 2.3
+fontFace = cv2.FONT_HERSHEY_PLAIN
+fontColor = (0, 255, 0)
+fontThickness = 2
+cv2.putText(imageText, text, (200, 700), fontFace, fontScale, fontColor, fontThickness, cv2.LINE_AA)
+cv2.imshow("Image With Text", imageText)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
