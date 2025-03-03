@@ -46,12 +46,56 @@ plt.show()
 
 # ================================ Cropping Images  ================================ #
 
-img_NZ_bgr = cv2.imread("class_02/assets/New_Zealand_Boat.jpg", 1) # Load the image with color mode
-img_NZ_rgb = cv2.cvtColor(img_NZ_bgr, cv2.COLOR_BGR2RGB) # Convert the image to RGB
+img_NZ_bgr = cv2.imread("class_02/assets/New_Zealand_Boat.jpg", 1)
+img_NZ_rgb = cv2.cvtColor(img_NZ_bgr, cv2.COLOR_BGR2RGB)
+plt.imshow(img_NZ_rgb)
+plt.show()
+cropped_region = img_NZ_rgb[200:400, 300:600]
+plt.imshow(cropped_region) 
+plt.show() 
 
-plt.imshow(img_NZ_rgb) # Select the image to show
-plt.show() # Show the image
+# ================================ Resizing Images  ================================ #
 
-cropped_region = img_NZ_rgb[200:400, 300:600] # Crop the image
-plt.imshow(cropped_region) # Select the image to show
-plt.show() # Show the image
+# Method 1: Specifying Scaling Factor using fx and fy
+img_NZ_bgr = cv2.imread("class_02/assets/New_Zealand_Boat.jpg", 1)
+img_NZ_rgb = cv2.cvtColor(img_NZ_bgr, cv2.COLOR_BGR2RGB) 
+cropped_region = img_NZ_rgb[200:400, 300:600]
+resized_cropped_region_2x = cv2.resize(cropped_region, None, fx=2, fy=2) 
+plt.imshow(resized_cropped_region_2x) 
+plt.show()
+
+# Method 2: Specifying exact size of the output image (Problem with aspect ratio)
+desired_width = 100
+desired_height = 200
+dim = (desired_width, desired_height)
+resized_cropped_region = cv2.resize(cropped_region, dsize=dim, interpolation=cv2.INTER_AREA) 
+plt.imshow(resized_cropped_region) 
+plt.show()
+
+# Method 3: Resize while maintaining aspect ratio | Maintaining aspect ratio (Problem with quality) 
+desired_width = 100
+aspect_ratio = desired_width / cropped_region.shape[1]
+desired_height = int(cropped_region.shape[0] * aspect_ratio)
+dim = (desired_width, desired_height)
+resized_cropped_region = cv2.resize(cropped_region, dsize=dim, interpolation=cv2.INTER_AREA)
+plt.imshow(resized_cropped_region)
+plt.show()
+
+# ================================ Saving Images  ================================ #
+
+resized_cropped_region_2x = resized_cropped_region_2x[:,  :,  :: - 1]
+cv2.imwrite("resized_cropped_region_2x.png", resized_cropped_region_2x)
+
+# ================================ Flipping Images ================================ #
+
+img = cv2.imread('class_02/assets/New_Zealand_Boat.jpg', 1)
+img = img[:,  :,  :: - 1 ]
+img_flipped_horz = cv2.flip(img, 1)
+img_flipped_vert = cv2.flip(img, 0)
+img_flipped_both = cv2.flip(img, -1)
+plt.figure(figsize=(18, 5))
+plt.subplot(141);plt.imshow(img_flipped_horz);plt.title("Horizontal Flip")
+plt.subplot(142);plt.imshow(img_flipped_vert);plt.title("Vertical Flip")
+plt.subplot(143);plt.imshow(img_flipped_both);plt.title("Both Flipped")
+plt.subplot(144);plt.imshow(img);plt.title("Original")
+plt.show()

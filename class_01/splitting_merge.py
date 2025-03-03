@@ -1,7 +1,5 @@
 from imports import *
 
-# ================================ Splitting and Merging Color Channels  ================================ #
-
 img_lake = cv2.imread("assets/New_Zealand_Lake.jpg", 1) # Load the image with color mode
 b, g, r = cv2.split(img_lake) # Split the image into blue, green, and red channels
 
