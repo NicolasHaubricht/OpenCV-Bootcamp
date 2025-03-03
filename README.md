@@ -32,7 +32,20 @@ This repository contains Python scripts for basic image processing using OpenCV.
 
 ### 5️⃣ Cropping Images  
 - Array slicing techniques for region extraction  
-- Selective pixel manipulation  
+- Selective pixel manipulation
+
+### 6⃣ Resizing Images
+
+- Scaling images while maintaining aspect ratio
+- Resizing using exact dimensions
+- Choosing appropriate interpolation methods
+
+### 7⃣ Saving Images
+- Exporting processed images using `cv2.imwrite()`
+
+### 8⃣ Flipping Images
+- Flipping images horizontally, vertically, and both directions
+
 
 ## 📂 Repository Structure  
 ```bash
