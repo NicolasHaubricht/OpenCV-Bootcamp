@@ -13,38 +13,50 @@ This repository contains Python scripts for basic image processing using OpenCV.
 
 ## 📌 Topics Covered  
 
-### 1️⃣ Loading and Displaying Images  
-- Reading grayscale (`cv2.IMREAD_GRAYSCALE`) and color (`cv2.IMREAD_COLOR`) images  
-- Displaying images using `matplotlib` with proper RGB conversion  
+The `main.py` file is organized into sections, each focusing on a specific OpenCV concept I studied. Below is an overview of the topics:
 
-### 2️⃣ Working with Color Images  
-- Understanding BGR vs. RGB color formats  
-- Converting between color spaces using `cv2.cvtColor()`  
+1. **Basic Image Loading and Display**
+   - Loading grayscale and color images using `cv2.imread()`.
+   - Inspecting image properties (shape, data type) with NumPy.
+   - Displaying images using Matplotlib with proper color mapping.
 
-### 3️⃣ Splitting and Merging Color Channels  
-- Extracting R, G, B channels with `cv2.split()`  
-- Reconstructing images with `cv2.merge()`  
-- Visualizing individual color channels  
+2. **Working with Color Images**
+   - Handling BGR vs. RGB color formats and converting between them.
+   - Reversing color channels for proper visualization.
 
-### 4️⃣ Converting Color Spaces  
-- HSV and LAB color space conversions  
-- Practical applications of different color spaces  
+3. **Splitting and Merging Color Channels**
+   - Splitting an image into its Red, Green, and Blue channels using `cv2.split()`.
+   - Merging channels back into a full-color image with `cv2.merge()`.
 
-### 5️⃣ Cropping Images  
-- Array slicing techniques for region extraction  
-- Selective pixel manipulation
+4. **Converting Color Spaces**
+   - Exploring grayscale and binary image manipulation.
+   - Modifying pixel values and visualizing changes.
 
-### 6⃣ Resizing Images
+5. **Cropping Images**
+   - Extracting regions of interest (ROI) from images using array slicing.
 
-- Scaling images while maintaining aspect ratio
-- Resizing using exact dimensions
-- Choosing appropriate interpolation methods
+6. **Resizing Images**
+   - Scaling images with different methods:
+     - Using scaling factors (`fx`, `fy`) with `cv2.resize()`.
+     - Specifying exact dimensions (with potential aspect ratio issues).
+     - Maintaining aspect ratio for better quality.
 
-### 7⃣ Saving Images
-- Exporting processed images using `cv2.imwrite()`
+7. **Saving Images**
+   - Writing processed images to disk using `cv2.imwrite()`.
 
-### 8⃣ Flipping Images
-- Flipping images horizontally, vertically, and both directions
+8. **Flipping Images**
+   - Applying horizontal, vertical, and combined flips with `cv2.flip()`.
+
+9. **Drawing Shapes**
+   - Drawing lines with `cv2.line()`.
+   - Drawing circles with `cv2.circle()`.
+   - Drawing rectangles with `cv2.rectangle()`.
+
+10. **Adding Text**
+    - Overlaying text on images using `cv2.putText()` with customizable fonts, sizes, and colors.
+
+11. **Combining Shapes and Text**
+    - Integrating rectangles and text for annotations on images.
 
 
 ## 📂 Repository Structure  
