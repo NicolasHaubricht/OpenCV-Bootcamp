@@ -13,6 +13,3 @@ cv2.rectangle(imageRectangle, (500, 100), (700, 600), (255, 0, 0), thickness=5, 
 cv2.imshow("Rectangle", imageRectangle)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-# Show the image
-plt.imshow(imageRectangle[:, :, ::-1])

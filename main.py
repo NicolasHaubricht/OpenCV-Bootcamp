@@ -17,7 +17,7 @@ plt.show()
 # ================================ Color Images  ================================ #
 
 logo_coca_cola = cv2.imread("class_01/assets/coca-cola-logo.png", 1)
-logo_coca_cola_reverse = logo_coca_cola[:,  :,  :: - 1 ]
+logo_coca_cola_reverse = cv2.cvtColor(logo_coca_cola, cv2.COLOR_BGR2RGB)
 plt.imshow(logo_coca_cola_reverse)
 plt.show()
 
@@ -129,7 +129,6 @@ cv2.rectangle(imageRectangle, (500, 100), (700, 600), (255, 0, 0), thickness=5, 
 cv2.imshow("Rectangle", imageRectangle)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-plt.imshow(imageRectangle[:, :, ::-1])
 
 # ================================ Adding Text ================================ #
 
