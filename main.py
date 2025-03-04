@@ -146,6 +146,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 # ================================ Adding Text and Rectangle ================================ #
+
 image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
 imageRectangle = image.copy()
 cv2.rectangle(imageRectangle, (500, 100), (700, 600), (0, 255, 0), thickness=5, lineType=cv2.LINE_8)
@@ -159,3 +160,17 @@ cv2.putText(imageRectangleText, text, (200, 700), fontFace, fontScale, fontColor
 cv2.imshow("Rectangle With Text", imageRectangleText)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+# ================================ New Topic ================================ #
+
+
+
+# ================================ New Topic ================================ #
+
+
+
+# ================================ New Topic ================================ #
+
+
+
+# ================================ New Topic ================================ #
