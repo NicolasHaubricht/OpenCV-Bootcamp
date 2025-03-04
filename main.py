@@ -103,6 +103,7 @@ plt.show()
 # ================================ Drawing Lines ================================ #
 
 image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
+image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
 imageLine = image.copy()
 cv2.line(imageLine, (654, 100), (654, 530), (0, 255, 255), thickness=5, lineType=cv2.LINE_AA)
 cv2.imshow("Line", imageLine)
@@ -112,6 +113,7 @@ plt.imshow(imageLine[:, :, ::-1])
 
 # ================================ Drawing Circles ================================ #
 
+image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
 imageCircle = image.copy()
 cv2.circle(imageCircle, (925, 580), 50, (0, 255, 255), thickness=5, lineType=cv2.LINE_AA)
 cv2.imshow("Circle", imageCircle)
@@ -121,6 +123,7 @@ plt.imshow(imageCircle[:, :, ::-1])
 
 # ================================ Drawing Rectangles ================================ #
 
+image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
 imageRectangle = image.copy()
 cv2.rectangle(imageRectangle, (500, 100), (700, 600), (255, 0, 0), thickness=5, lineType=cv2.LINE_8)
 cv2.imshow("Rectangle", imageRectangle)
@@ -130,6 +133,7 @@ plt.imshow(imageRectangle[:, :, ::-1])
 
 # ================================ Adding Text ================================ #
 
+image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
 imageText = image.copy()
 text = "Apollo 11 Saturn V Launch, July 16, 1969"
 fontScale = 2.3
@@ -138,5 +142,20 @@ fontColor = (0, 255, 0)
 fontThickness = 2
 cv2.putText(imageText, text, (200, 700), fontFace, fontScale, fontColor, fontThickness, cv2.LINE_AA)
 cv2.imshow("Image With Text", imageText)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# ================================ Adding Text and Rectangle ================================ #
+image = cv2.imread("class_03/assets/Apollo_11_Launch.jpg", cv2.IMREAD_COLOR)
+imageRectangle = image.copy()
+cv2.rectangle(imageRectangle, (500, 100), (700, 600), (0, 255, 0), thickness=5, lineType=cv2.LINE_8)
+text = "Apollo 11 Saturn V Launch, July 16, 1969"
+fontScale = 2.3
+fontFace = cv2.FONT_HERSHEY_PLAIN
+fontColor = (0, 255, 0)
+fontThickness = 2
+imageRectangleText = imageRectangle.copy()
+cv2.putText(imageRectangleText, text, (200, 700), fontFace, fontScale, fontColor, fontThickness, cv2.LINE_AA)
+cv2.imshow("Rectangle With Text", imageRectangleText)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
